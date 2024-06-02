@@ -1,0 +1,5 @@
+// datatype arrayName[arraySize];
+
+
+
+
