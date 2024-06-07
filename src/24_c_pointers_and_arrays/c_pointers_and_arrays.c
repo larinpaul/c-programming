@@ -46,6 +46,48 @@ int main() {
 	printf("\n");
 
 
+	// Access array elements using pointer
+	// int numbers[5] = {1,3,5,7,9};
+	// for an array numbers, numbers is the pointer that gives the address of the first element
+	// similarly, numbers + i gives the address of the ith element.
+
+	// Now, to access the first element, we can use *numbers
+	// *numbers
+	// similarly, to access the i element, we can use *(numbers + i)
+	// *(numbers + i)
+
+
+	int numbers2[5] = {21, 23, 25, 27, 29};
+
+	for (int i = 0; i < 5; ++i) { // numbers + i gives the address of the ith element
+		printf("%d = %p\n", numbers2[i], numbers2 + i);
+	}
+	printf("\n");
+	for (int i = 0; i < 5; ++i) { // here we use *(numbers + i)
+		printf("%d = %p\n", *(numbers2 + i), numbers2 + i);
+	}					      // value 		// address
+	// In this way, we were able to access the value and the address of the pointers...
+	printf("\n");
+
+
+	// Just like accessing the elements, we can also change the array elements
+
+	int numbers3[5] = {31, 33, 35, 37, 39};
+
+	for (int i = 0; i < 5; ++i) {
+		printf("%d = %p\n", *(numbers3 + i), numbers3 + i);
+	}
+	printf("\n");
+
+	*numbers3 = 02; // represents the first element // 2
+	numbers3[1] = 11; // represents the second element // 11
+	*(numbers3 + 4) = 444; // represents the last element // 444
+
+	for (int i = 0; i < 5; ++i) {
+		printf("%d = %p\n", *(numbers3 + i), numbers3 + i);
+	}
+	printf("\n");
+
 
 
 	return 0;
