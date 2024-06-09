@@ -25,6 +25,21 @@ typedef struct PersonToo {
 	int age;
 } persontoo; // this is an alias
 
+// Let's see a practical example of struct
+// Let's say we need to add two complex numbers
+//	   21.87 + 30 i
+// real part + imaginary part
+//     81.72 + 20 i
+// We have to add a real part of a complex number
+// with a real part of another complex number
+// And an imaginary part of a complex number
+// with an imaginary part of another complex number
+
+typedef struct Complex {
+	double real;
+	double imagine;
+} complex;
+
 int main() {
 
 	struct Person person1;
@@ -84,6 +99,30 @@ int main() {
 	person11.salary = 4321.78;
 	printf("\nAge of person11: %d\n", person11.age);
 	printf("Salary of person11: %.2lf\n", person11.salary);
+
+
+	// Let's see a practical example of struct
+	// Let's say we need to add two complex numbers
+	//	   21.87 + 30 i
+	// real part + imaginary part
+	//     81.72 + 20 i
+	// We have to add a real part of a complex number
+	// with a real part of another complex number
+	// And an imaginary part of a complex number
+	// with an imaginary part of another complex number
+
+	complex c1 = {.real = 21.87, .imagine = 30};
+	complex c2 = {.real = 13.34, .imagine = 112.23};
+
+	// Now let's create another complex variable
+	// to store the sum of these two variables
+
+	complex sum;
+
+	sum.real = c1.real + c2.real;
+	sum.imagine = c1.imagine + c2.imagine;
+
+	printf("\nResult is %.2lf + %.2lfi\n", sum.real, sum.imagine);
 
 
 	return 0;
