@@ -129,3 +129,21 @@
 //}
 //
 //
+
+// There are several alternatives to `malloc` for allocating memory in C,
+// each with its own strengths and weaknesses:
+// 1. calloc: Allocates memory and initiallizes it to zero.
+// Two arguments: the number of elements and the size of each element.
+// 2. Hoard Memory Allocator. Effective for multithreading
+// 3. dmalloc: Another drop-in replacement for `malloc`,
+// dmalloc aims to make memory allocation issues easier to debug.
+// 4. mimalloc: This allocator is known for its performance and is often compared to Hoard.
+// 5. nedmalloc: Multithreaded, can be used as a drop-in replacement for CRT memory functions
+// 6. Platform-Specific Functions: For Unix-like systems `sbrk()` and `mmap()`
+// 7. Custom implementations: In embedded systems of specific use cases,
+// custom memory allocation strategies can be implemented using static arrays or ppols of memory.
+// These approaches can provide determenistic behavior and avoid the unpedictability of `malloc`.
+// 8. Statis Allocation: In some cases, static arrays ca neb used instead of dynamic allocation.
+// This approach avoids the need for `malloc` and ensures memory is automatically managed by the stack.
+// Each of these alternatives has its own trade-offs and should be chosen baed on
+// the specific requirements of the project.
