@@ -45,15 +45,84 @@ int main() {
 
 	ptr3 = (int*) malloc(n3 * sizeof(int));
 
-	printf("Enter the n3 (4) input values:\n");
-	for (int i = 0; i < n3; ++i) {
-		scanf("%d", ptr3 + i);
+//	printf("Enter the n3 (4) input values:\n");
+//	for (int i = 0; i < n3; ++i) {
+//		scanf("%d", ptr3 + i);
+//	}
+//
+//	printf("Input values:\n");
+//	for (int i = 0; i < n3; ++i) {
+//		printf("%d\n", *(ptr3 + i));
+//	}
+
+
+	// When memory allocation fails, malloc() functions returns null
+
+	// So let's write a condition to end the main() functions
+	// if the function cannot memory
+
+	int n4 = 4;
+
+	int* ptr4;
+
+	ptr4 = (int*) malloc(n4 * sizeof(int));
+
+	if (ptr4 == NULL) {
+		printf("Memory cannot be allocated");
+		return 0;
 	}
 
-	printf("Input values:\n");
-	for (int i = 0; i < n3; ++i) {
-		printf("%d\n", *(ptr3 + i));
+//	printf("Enter input values:\n");
+//	for (int i = 0; i < n4; ++i) {
+//		scanf("%d", ptr4 + i);
+//	}
+//
+//	printf("Input Values:\n");
+//	for (int i = 0; i < n4; ++i) {
+//		printf("%d\n", *(ptr4 + i));
+//	}
+
+	free(ptr4);
+
+
+	// realloc() Function
+
+	// In out previous example, we allocated 400 bytes of memory
+	// to store 4 integer values (maybe not 400 but 16?)
+	// ptr = (int*) malloc(4 * sizeof(int));
+	// Now, suppose we need to store two more integer data
+	// In this case, we use the realloc() function
+	// to change the size of the dynamically allocated memory
+	// Let's see the syntax to use realloc() function
+	// ptr = realloc(ptr, 6 * sizeof(int));
+
+	int n5 = 5;
+
+	int* ptr5;
+
+	ptr5 = (int*) malloc(n5 * sizeof(int));
+
+	if (ptr5 == NULL) {
+		printf("Memory cannot be allocated");
+		return 0;
 	}
+
+	printf("Allocated Memory\n");
+	for (int i = 0; i < n5; ++i) {
+		printf("%p\n", ptr5 + i);
+	}
+
+	n5 = 6;
+
+	ptr5 = realloc(ptr5, n5 * sizeof(int));
+
+	printf("Newly Allocated Memory\n");
+	for (int i = 0; i < n5; ++i) {
+		printf("%p\n", ptr5 + i);
+	}
+
+	free(ptr5);
+
 
 
 	return 0;
