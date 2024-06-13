@@ -1,0 +1,2 @@
+This is the text file.
+C Programming File Handling is awesome
