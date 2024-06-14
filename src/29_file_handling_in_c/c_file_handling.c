@@ -115,13 +115,66 @@ int main() {
 
 	if (fptr3 != NULL) {
 		while (fgets(content3, 1000, fptr3)) {
-			printf("%s", content3);
+			printf("%s\n", content3);
 		}
 	}
 	else {
 		printf("File Open Unsuccessful");
 	}
 
+
+	// Closing file
+	// Once the read operation is completed,
+	// it is a good practice to close the file with fclose()
+	fclose(fptr);
+	fclose(fptr2);
+	fclose(fptr3);
+
+
+	FILE* fptr4;
+
+	fptr4 = fopen("textroot.txt", "r");
+
+	char content4[1000];
+
+	if (fptr != NULL) {
+		while (fgets(content4, 1000, fptr4)) {
+			printf("%s", content4);
+		}
+	}
+	else {
+		printf("File Open Unsuccessful");
+	}
+
+	fclose(fptr4);
+	printf("We have successfully closed our file! :) \n");
+
+
+	// Write content to a file.
+	FILE* fptr5;
+
+	fptr5 = fopen("newFile.txt", "w"); // newfile.txt will be created :)
+	// It was created, albeit from the second time or something...
+	// Anyway, let's add content to the file! :)
+
+	fputs("I Love C Programming\n", fptr5);
+	fputs("C programming is awesome!", fptr5);
+
+	fclose(fptr5);
+	// Initially, the file did not exit. We created the file using fopen(), and then put the content with fputs()
+
+
+	// Whenever we open the file in write mode,
+	// all the content of the file will be erased.
+
+	FILE* fptr6;
+
+	fptr6 = fopen("newFile.txt", "w");
+
+	fputs("New Message \n", fptr6);
+
+	fclose(fptr6);
+	printf("New Message is printed out and the file is closed... :)");
 
 
 	return 0;
