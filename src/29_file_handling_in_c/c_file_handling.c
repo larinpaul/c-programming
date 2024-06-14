@@ -79,6 +79,22 @@ int main() {
 	//	File Open Successfully!
 
 
+	// Read File Content
+
+	FILE* fptr2;
+
+	fptr2 = fopen("textroot.txt", "r");
+
+	char content2[1000];
+
+	if (fptr2 != NULL) {
+		fgets(content2, 1000, fptr2);
+		printf("%s\n", content2); // As we can see, only the first line printed out
+	}	// "This is the text file." // If we want to print out all the lines, we need a loop
+	else {
+		printf("File Open Unsuccessful\n");
+	}
+
 
 	return 0;
 }
