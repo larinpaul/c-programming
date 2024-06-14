@@ -95,6 +95,34 @@ int main() {
 		printf("File Open Unsuccessful\n");
 	}
 
+	printf("Let's try and use a loop\n");
+	if (fptr2 != NULL) {
+		while (fgets(content2, 1000, fptr2)) {
+			printf("%s\n", content2);
+		}
+	}
+	else {
+		printf("File Open Unsuccessful\n");
+	}
+
+
+	printf("Let's try and use a loop again\n");
+	FILE* fptr3;
+
+	fptr3 = fopen("textroot.txt", "r");
+
+	char content3[1000];
+
+	if (fptr3 != NULL) {
+		while (fgets(content3, 1000, fptr3)) {
+			printf("%s", content3);
+		}
+	}
+	else {
+		printf("File Open Unsuccessful");
+	}
+
+
 
 	return 0;
 }
